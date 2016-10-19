@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All">
+
+	<test name="Home">
+		<classes>
+			<class name="uk.co.mcdonalds.test.Home" />
+		</classes>
+	</test> <!-- Home -->
+
+	<test name="Nutrition">
+		<classes>
+			<class name="uk.co.mcdonalds.test.Nutrition" />
+		</classes>
+	</test> <!-- Nutrition -->
+
+
+</suite> <!-- All -->
