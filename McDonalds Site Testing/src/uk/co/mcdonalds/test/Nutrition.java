@@ -73,6 +73,7 @@ public class Nutrition extends BaseTest {
 		// Check if NC summary is displayed
 		Assert.assertTrue(isElementDisplayed(NutritionCalculatorPage.getSummarySection()));
 		// Check if product list is displayed
+		waitExplicit(ExpectedConditions.visibilityOfElementLocated(NutritionCalculatorPage.getProductListContents()));
 		Assert.assertTrue(getElements(NutritionCalculatorPage.getProductListContents()).size() > 0);
 	}
 	
