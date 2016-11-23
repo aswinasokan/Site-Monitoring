@@ -14,6 +14,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 
+import uk.co.mcdonalds.section.CookieMessage;
 import uk.co.mcdonalds.section.Header;
 import uk.co.mcdonalds.section.HomePage;
 import uk.co.mcdonalds.section.SignUpOverlay;
@@ -51,7 +52,7 @@ public abstract class BaseTest {
 	}		
 
 	protected void launchSite() {
-		navigateToHome();
+		navigate(HomePage.URL);
 		
 		// Added to allow page to fully load, by Explicit Wait. Required only for IE synchronisation
 		waitExplicit(ExpectedConditions.presenceOfElementLocated(SignUpOverlay.getSignUpSection())); 
@@ -107,12 +108,13 @@ public abstract class BaseTest {
 		}
 	}	
 	
-	protected void navigateTo(String url) {
+	private void navigate(String url) {
 		driver.get(url);
 	}
-	
-	protected void navigateToHome() {
-		navigateTo(HomePage.URL);
+
+	protected void navigateTo(String url) {
+		navigate(url);
+		Assert.assertTrue(isElementHidden(CookieMessage.getMessageSection()));
 	}
 	
 	protected String getTitle() {

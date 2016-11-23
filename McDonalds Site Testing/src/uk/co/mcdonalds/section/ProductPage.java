@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class ProductPage {
 
-	public final static String URL_BIG_MAC = HomePage.URL + "ukhome/product_nutrition.beef.19.big-mac.html";
+	public final static String URL_BIG_MAC = HomePage.BASE_PATH + "product_nutrition.beef.19.big-mac.html";
 	public final static String TITLE_BIG_MAC = "Big Mac® :: McDonalds.co.uk";
 	
 	public static By getNutritionDetailsLink() {
