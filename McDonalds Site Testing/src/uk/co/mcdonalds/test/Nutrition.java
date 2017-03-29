@@ -17,7 +17,7 @@ public class Nutrition extends BaseTest {
 	@AfterMethod
 	private void clearTestData() {
 		// Clear items from if present in Nutrition calculator
-		navigateTo(NutritionCalculatorPage.BASE_URL);
+		navigateTo(NutritionCalculatorPage.URL);
 		if (isElementDisplayed(NutritionCalculatorPage.getSummarySection())) {
 			getElement(NutritionCalculatorPage.getEmptyCalculatorLink()).click();
 			waitExplicit(ExpectedConditions.visibilityOfElementLocated(NutritionCalculatorPage.getRemoveItemConfirmButton()));
@@ -80,7 +80,7 @@ public class Nutrition extends BaseTest {
 	@Test
 	public void addToNutritionCalculatorFromWithin() {
 		// Add Product from within the Nutrition Calculator page
-		navigateTo(NutritionCalculatorPage.BASE_URL);
+		navigateTo(NutritionCalculatorPage.URL);
 		waitExplicit(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
 				return d.findElement(NutritionCalculatorPage.getSelectedMenuItem()).getText().length() != 0;
@@ -100,7 +100,7 @@ public class Nutrition extends BaseTest {
 	@Test
 	public void verifyEmptyNutritionCalculator() {
 		// Check NC when no products are added
-		navigateTo(NutritionCalculatorPage.BASE_URL);
+		navigateTo(NutritionCalculatorPage.URL);
 
 		Assert.assertTrue(isElementDisplayed(NutritionCalculatorPage.getEmptySection()));
 		Assert.assertTrue(isElementHidden(NutritionCalculatorPage.getSummarySection()));
@@ -110,7 +110,7 @@ public class Nutrition extends BaseTest {
 	@Test
 	public void addAndEmptyWithinNutritionCalculator() {
 		// Add from Nutrition Calculator page, remove and check for empty
-		navigateTo(NutritionCalculatorPage.BASE_URL);
+		navigateTo(NutritionCalculatorPage.URL);
 		waitExplicit(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
 				return d.findElement(NutritionCalculatorPage.getSelectedMenuItem()).getText().length() != 0;
@@ -138,7 +138,7 @@ public class Nutrition extends BaseTest {
 		getElement(ProductPage.getAddToCalculatorButton()).click();
 		waitExplicit(ExpectedConditions.visibilityOfElementLocated(ProductPage.getAddedMessageSection()));
 
-		navigateTo(NutritionCalculatorPage.BASE_URL);
+		navigateTo(NutritionCalculatorPage.URL);
 		getElement(NutritionCalculatorPage.getEmptyCalculatorLink()).click();
 		waitExplicit(ExpectedConditions.visibilityOfElementLocated(NutritionCalculatorPage.getRemoveItemConfirmButton()));
 		getElement(NutritionCalculatorPage.getRemoveItemConfirmButton()).click();

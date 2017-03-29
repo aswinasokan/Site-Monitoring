@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class NutritionCalculatorPage {
 
-	public final static String BASE_URL = HomePage.BASE_PATH + "meal_builder.html";
+	public final static String URL = HomePage.BASE_PATH + "meal_builder.html";
 	public final static String TITLE = "Nutrition Calculator :: McDonalds.co.uk";
 	
 	public static By getEmptySection() {
