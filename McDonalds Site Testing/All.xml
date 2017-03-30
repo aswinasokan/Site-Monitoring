@@ -14,5 +14,10 @@
 		</classes>
 	</test> <!-- Nutrition -->
 
+	<test name="FootballForm">
+		<classes>
+			<class name="uk.co.mcdonalds.test.FootballMoty" />
+		</classes>
+	</test> <!-- FootballForm -->
 
 </suite> <!-- All -->

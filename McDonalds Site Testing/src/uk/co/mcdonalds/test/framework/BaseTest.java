@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -123,6 +124,22 @@ public abstract class BaseTest {
 	
 	protected String getUrl() {
 		return driver.getCurrentUrl();
+	}
+	
+	protected void enterText(By by, String value) {
+		getElement(by).sendKeys(value);
+	}
+	
+	protected void selectValue(By by, String value) {
+		new Select(getElement(by)).selectByValue(value);
+	}
+	
+	protected void click(By by) {
+		getElement(by).click();
+	}
+	
+	protected void switchFrame(By by) {
+		driver.switchTo().frame(getElement(by));
 	}	
 	
 	protected <T> void waitExplicit(ExpectedCondition<T> conditions) {
