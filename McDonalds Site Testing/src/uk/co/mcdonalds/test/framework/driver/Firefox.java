@@ -7,7 +7,7 @@ public class Firefox {
 
 	public WebDriver getDriver() {
 		String currentDir = System.getProperty("user.dir");
-		String driverLocation = currentDir + "/tools/marionette/wires.exe";
+		String driverLocation = currentDir + "/tools/marionette/geckodriver-64.exe";
 		System.setProperty("webdriver.gecko.driver", driverLocation);
 		
 		return new FirefoxDriver();
